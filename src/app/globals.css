@@ -342,6 +342,8 @@ body {
 @media (max-width: 639px) {
   .image-card-container {
     flex-direction: column; /* Stack image and caption vertically */
+    overflow-y: auto; /* Allow scrolling when content exceeds height */
+    height: 100vh; /* Full height to make sure the container uses the full viewport */
   }
 
   .image-card {
@@ -360,8 +362,9 @@ body {
     text-align: center; /* Center-align text */
     padding: 10px; /* Reduce padding */
   }
+
   .cover-text {
-    font-size: 2rem; /* Smaller text for mobile */
+    font-size: 1rem; /* Smaller text for mobile */
   }
 
   .birthday-icon {
@@ -392,11 +395,12 @@ body {
 }
 
 
-
 /* Medium Screens (Tablets and Small Desktops) */
 @media (min-width: 640px) and (max-width: 1023px) {
   .image-card-container {
     flex-direction: column; /* Stack image and caption vertically */
+    overflow-y: auto; /* Allow scrolling */
+    height: 100vh; /* Full height */
   }
 
   .image-card {
@@ -416,8 +420,9 @@ body {
     padding: 15px; /* Moderate padding */
     font-size: 1.2rem; /* Slightly increase font size */
   }
+
   .cover-text {
-    font-size: 3rem; /* Larger text for tablets */
+    font-size: 1rem; /* Larger text for tablets */
   }
 
   .birthday-icon {
@@ -444,10 +449,13 @@ body {
   }
 }
 
+
 /* iPads */
 @media (min-width: 768px) and (max-width: 1024px) {
   .image-card-container {
     flex-direction: row; /* Image and caption side by side */
+    overflow-y: auto; /* Allow scrolling */
+    height: 100vh; /* Full height */
   }
 
   .image-card {
@@ -467,8 +475,9 @@ body {
     padding: 20px; /* Comfortable padding */
     font-size: 1.5rem; /* Increase font size */
   }
+
   .cover-text {
-    font-size: 4rem; /* Adjusted font size */
+    font-size: 1rem; /* Adjusted font size */
   }
 
   .birthday-icon {
@@ -489,7 +498,7 @@ body {
   }
 
   .text-frame::before, .text-frame::after {
-    font-size: 2rem; /* Slightly larger icons for iPads */
+    font-size: 1rem; /* Slightly larger icons for iPads */
     top: -15px;
     left: -15px;
   }
@@ -499,24 +508,27 @@ body {
 @media (min-width: 1024px) {
   .image-card-container {
     flex-direction: row; /* Image and caption side by side */
+    
   }
 
   .image-card {
     width: 40vw; /* Larger width for desktop */
-    height: 90vh; /* Taller height */
+    height: 90vh; /* Height adjusts based on content */
   }
 
   .image-card img {
     width: 100%; /* Full width */
-    height: 100%; /* Cover full height */
+    height: 100%; /* Maintain aspect ratio */
     object-fit: cover; /* Keep image aspect ratio */
   }
 
   .image-card-text {
     text-align: left; /* Left-align caption */
     padding: 30px; /* Larger padding for readability */
-    font-size: 2rem; /* Bigger font size */
+    font-size: 1rem; /* Bigger font size */
+    overflow-y: auto; /* Allow scrolling if text exceeds container */
   }
+
   .cover-text {
     font-size: 5rem; /* Largest text for desktops */
   }
@@ -537,6 +549,7 @@ body {
     justify-content: space-evenly; /* Ensures equal space between bubbles */
     gap: 30px; /* Adjust gap between bubbles */
   }
+
   .text-frame::before, .text-frame::after {
     font-size: 3rem; /* Largest icons for big screens */
     top: -20px;
