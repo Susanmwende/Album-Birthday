@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
+// Image and caption data
 const images = [
   { src: "/images/image1.jpg", caption: "Yeeey! You’ve grown old! 😂 But somehow, you’re still just as cute as ever. Happy Birthday, my forever-young love! Here’s to more years of being adorable and charming (and, okay, a little older) with me! 🥂💕" },
   { src: "/images/image2.jpeg", caption: "So, you’re officially older now… but let’s be honest, I’m still with the same goofy kid I fell for. Here’s to one more year of pretending to be grown-ups while really just being a pair of goofballs together. 🥳💕" },
@@ -15,9 +16,11 @@ const images = [
 
 const Album = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const audioRef = useRef(null); // Reference to the audio element
+  const audioRef = useRef<HTMLAudioElement | null>(null); // Properly type the audioRef to avoid errors
+  const [audioReady, setAudioReady] = useState(false); // State to track if audio has been triggered
 
   useEffect(() => {
+    // Start the slideshow of images
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000); // Transition every 5 seconds
@@ -25,11 +28,35 @@ const Album = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.play(); // Automatically play the audio when the component is loaded
+  const handleUserInteraction = () => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.play().then(() => {
+        setAudioReady(true); // Audio has started, so we update state
+      }).catch((err) => {
+        console.error("Error playing audio:", err); // Handle errors
+      });
     }
-  }, []); // Empty dependency array to only run this on mount
+  };
+
+  useEffect(() => {
+    // Add event listeners to trigger audio play when user interacts with the page
+    const handleClickOrScroll = () => {
+      if (!audioReady) {
+        handleUserInteraction();
+      }
+    };
+
+    // Listen for both click and scroll events to trigger the audio play
+    window.addEventListener('click', handleClickOrScroll);
+    window.addEventListener('scroll', handleClickOrScroll);
+
+    // Cleanup event listeners when component unmounts
+    return () => {
+      window.removeEventListener('click', handleClickOrScroll);
+      window.removeEventListener('scroll', handleClickOrScroll);
+    };
+  }, [audioReady]);
 
   return (
     <div className="album-container flex flex-col items-center justify-center h-screen max-h-screen overflow-y-visible relative">
