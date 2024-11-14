@@ -67,7 +67,7 @@ const Album = () => {
       </audio>
 
       <div className="image-card-container show block text-center">
-        <div className="image-card mb-4">
+        <div className="image-card mb-2">
           <img
             src={images[currentImageIndex].src}
             alt={`Image ${currentImageIndex + 1}`}

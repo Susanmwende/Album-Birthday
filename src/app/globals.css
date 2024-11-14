@@ -343,7 +343,8 @@ body {
   .image-card-container {
     flex-direction: column; /* Stack image and caption vertically */
     overflow-y: auto; /* Allow scrolling when content exceeds height */
-    height: 100vh; /* Full height to make sure the container uses the full viewport */
+    height: 80vh;
+    gap: 2px; /* Full height to make sure the container uses the full viewport */
   }
 
   .image-card {
@@ -353,7 +354,7 @@ body {
 
   .image-card img {
     width: 100%; /* Full width */
-    max-height: 400px; /* Limit the maximum height to prevent images from being too tall */
+    max-height: 370px; /* Limit the maximum height to prevent images from being too tall */
     object-fit: cover; /* Ensure images don't get distorted */
     height: auto;
   }
@@ -400,7 +401,7 @@ body {
   .image-card-container {
     flex-direction: column; /* Stack image and caption vertically */
     overflow-y: auto; /* Allow scrolling */
-    height: 100vh; /* Full height */
+    height: 90vh; /* Full height */
   }
 
   .image-card {
@@ -410,7 +411,7 @@ body {
 
   .image-card img {
     width: 100%; /* Full width */
-    max-height: 400px; /* Limit the maximum height */
+    max-height: 350px; /* Limit the maximum height */
     object-fit: cover; /* Ensure images don't get distorted */
     height: 95vh;
   }
@@ -455,7 +456,7 @@ body {
   .image-card-container {
     flex-direction: row; /* Image and caption side by side */
     overflow-y: auto; /* Allow scrolling */
-    height: 100vh; /* Full height */
+    height: 80vh; /* Full height */
   }
 
   .image-card {
