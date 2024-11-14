@@ -23,7 +23,7 @@ const Album = () => {
     // Start the slideshow of images
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Transition every 5 seconds
+    }, 6000); // Transition every 5 seconds
 
     return () => clearInterval(interval);
   }, []);
