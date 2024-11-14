@@ -353,18 +353,18 @@ body {
 
   .image-card img {
     width: 100%; /* Full width */
-    max-height: 300px; /* Limit the maximum height to prevent images from being too tall */
+    max-height: 500px; /* Limit the maximum height to prevent images from being too tall */
     object-fit: cover; /* Ensure images don't get distorted */
     height: auto;
   }
 
   .image-card-text {
     text-align: center; /* Center-align text */
-    padding: 10px; /* Reduce padding */
+    padding: 1px; /* Reduce padding */
   }
 
   .cover-text {
-    font-size: 1rem; /* Smaller text for mobile */
+    font-size: 0.5rem; /* Smaller text for mobile */
   }
 
   .birthday-icon {
@@ -410,9 +410,9 @@ body {
 
   .image-card img {
     width: 100%; /* Full width */
-    max-height: 400px; /* Limit the maximum height */
+    max-height: 500px; /* Limit the maximum height */
     object-fit: cover; /* Ensure images don't get distorted */
-    height: auto;
+    height: 95vh;
   }
 
   .image-card-text {
@@ -461,7 +461,7 @@ body {
   .image-card {
     width: 60vw; /* Adjust width */
     max-height: 500px; /* Limit maximum height to prevent overflow */
-    height: auto;
+    height: 90vh;
   }
 
   .image-card img {

@@ -77,7 +77,7 @@ const Album = () => {
 
         <div className="image-card-text">
           <div className="text-frame">
-            <h4 className="text-2xl sm:text-xl md:text-xl lg:text-2xl font-serif text-black font-bold">
+            <h4 className="text-xl sm:text-xl md:text-xl lg:text-2xl font-serif text-black font-bold">
               {images[currentImageIndex].caption}
             </h4>
           </div>
